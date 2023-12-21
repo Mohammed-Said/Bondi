@@ -1,6 +1,7 @@
 :root{
   --dark-color: #19283f;
   --green-color: #33d1cc;
+  --hover-green-color:rgba(51 209 204  / 75%);
   --red-color: #ff3150;
   --yellow-color: #ffc400;
   --section-color: #eff7fa;
@@ -12,16 +13,17 @@ body{
 /* component */
 .main-btn{
   background-color: var(--red-color);
-  color: var(--yellow-color);
+  color: var(--section-color);
   padding: .5rem 1rem;
 }
 .main-btn:hover{
-  background-color: var(--yellow-color);
+  background-color: transparent;
   color: var(--red-color);
+  border: 1px solid var(--red-color);
 }
 
 
-.main-heading::after{
+.main-title::after{
   content: "";
   height: 2px;
   width: 120px;
@@ -30,7 +32,6 @@ body{
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-
 }
 /* nav */
 .navbar{
@@ -63,4 +64,118 @@ body{
   align-items: center;
   height: calc( 100vh - 72px );
   background-color: var(--dark-color);
+}
+/* features */
+.features .icon-holder{
+  height: 200px;
+}
+.features .icon-holder svg{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.features .icon-holder .number{
+  font-size: 12rem;
+  color: var(--section-color);
+}
+.features .icon-holder .icon{
+  color: var(--green-color);
+}
+.features h4{
+  color: var(--yellow-color);
+}
+/* our work  */
+.our-work{
+  background-color: var(--section-color);
+}
+.our-work ul .active{
+  background-color: var(--red-color);
+  color: var(--section-color);
+}
+.our-work ul li{
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+.our-work ul li:hover:not(.active){
+  color: var(--red-color);
+}
+.our-work .box{
+  position: relative;
+  overflow: hidden;
+  padding: .5rem;
+}
+.our-work .box::before{
+  content: attr(data-work);
+  position: absolute;
+  background-color: var(--hover-green-color);
+  width: calc( 100% - 1rem);
+  height: calc( 100% - 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  transition: .5s;
+  font-size: 1.5rem;
+  transform: translateX(calc( -100% - .5rem));
+}
+.our-work .box:hover::before{
+  transform: translateX(0);
+}
+/* stuff */
+.stuff .description{
+  max-width: 600px;
+}
+/* team */
+.team{
+  background-color: var(--section-color);
+}
+.team h2{
+  color: var(--yellow-color);
+}
+.team .box h4{
+  background-color: var(--green-color);
+}
+/* project */
+.project{
+  background-color: var(--dark-color);
+}
+/* subscribe */
+.subscribe{
+  background-color: var(--yellow-color);
+}
+.subscribe input[type='text']:focus{
+  outline: none;
+}
+.subscribe ::placeholder{
+  color: #fff;
+}
+.subscribe input[type='submit']{
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+}
+/* footer */
+footer{
+  background-color: var(--dark-color);
+}
+footer .copyright > span {
+  color: var(--green-color);
+}
+footer .copyright div span {
+  color: var(--yellow-color);
+}
+footer .contact ul svg {
+  width: 20px;
+  height: 20px;
+}
+footer .facebook {
+  background-color: #1877f2;
+}
+footer .twitter {
+  background-color: #1da1f2;
+}
+footer .linkedin {
+  background-color: #0077b5;
+}
+footer .youtube {
+  background-color: #ff0000;
 }
